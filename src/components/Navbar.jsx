@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <nav style={styles.nav}>
-      <h1 style={styles.logo}>AnkiFlash</h1>
+      <h1 style={styles.logo}>AnkiFlash V.1.0</h1>
       <ul style={styles.navLinks}>
         <li>
           <Link to="/" style={styles.link}>
