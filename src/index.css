@@ -1,0 +1,33 @@
+/* src/index.css */
+:root {
+  --primary-color: #093057;
+  --secondary-color: #ffffff;
+  --accent-color: #f0f0f0;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+input {
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  margin-right: 10px;
+}

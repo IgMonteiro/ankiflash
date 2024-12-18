@@ -1,0 +1,58 @@
+/* src/pages/Home.css */
+
+/* Importa as variáveis globais */
+@import '../../styles.css';
+
+/* Estilos para o container principal */
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* Ajuste conforme a altura do seu Navbar */
+  background-color: var(--color-primary);
+}
+
+/* Estilos para o conteúdo */
+.home-content {
+  text-align: center;
+  color: var(--color-text);
+  padding: 20px;
+}
+
+/* Estilos para o título */
+.home-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-family);
+  animation: fadeInDown 1s;
+}
+
+/* Estilos para o subtítulo */
+.home-subtitle {
+  font-size: 1.5rem;
+  font-family: var(--font-family);
+  animation: fadeInUp 1s;
+}
+
+/* Animações */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

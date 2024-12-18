@@ -1,0 +1,742 @@
+/* src/styles.css */
+
+/* Definição de Variáveis de Cores */
+:root {
+  --color-primary: #0f4c83; /* Azul Escuro */
+  --color-secondary: #2a2a2a; /* Cinza Escuro */
+  --color-error: #ff3030; /* Vermelho */
+  --color-warning: #ff922e; /* Laranja */
+  --color-success: #2fbe34; /* Verde */
+  --color-neutral: #5a5a5e; /* Cinza Médio */
+  --color-neutral-light: #5b5ba6; /* Azul Médio */
+  --color-background: var(--color-primary);
+  --color-text: #ffffff;
+  --font-family: 'Recursive', sans-serif;
+}
+
+/* Reset de Margens e Padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo do Corpo da Página */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 160px; /* Espaço para o footer fixo */
+}
+
+/* Estilo Geral dos Botões */
+.button {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border: 2px solid var(--color-primary);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: var(--font-family);
+}
+
+.button:hover {
+  background-color: #0d3a6b; /* Azul mais Escuro */
+}
+
+/* Estilo Geral dos Inputs e Textareas */
+.input, .textarea {
+  border: 1px solid var(--color-primary);
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
+  font-family: var(--font-family);
+  font-size: 1rem;
+}
+
+.input:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--color-success);
+}
+
+.input::placeholder, .textarea::placeholder {
+  color: #888888;
+  opacity: 1; /* Firefox */
+}
+
+/* Classes Base para Botões */
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: 12px;
+  transition: background-color 0.3s;
+}
+
+.btn-erro {
+  background-color: var(--color-error);
+}
+
+.btn-erro:hover {
+  background-color: #e60000; /* 10% mais escuro que #ff3030 */
+}
+
+.btn-meio {
+  background-color: var(--color-warning);
+}
+
+.btn-meio:hover {
+  background-color: #e68a1f; /* 10% mais escuro que #ff922e */
+}
+
+.btn-acerto {
+  background-color: var(--color-success);
+}
+
+.btn-acerto:hover {
+  background-color: #28a832; /* 10% mais escuro que #2fbe34 */
+}
+
+/* Classes Específicas de Botões */
+.btn-fail, .btn-success {
+  width: 246px;
+  height: 54px;
+  margin: 10px;
+  font-family: var(--font-family);
+  font-size: 18px;
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-fail {
+  background-color: #f06b6b;
+  border-color: #d70900;
+}
+
+.btn-fail:hover {
+  background-color: #df8686;
+}
+
+.btn-success {
+  background-color: #6ff06b;
+  border-color: #5cd43d;
+}
+
+.btn-success:hover {
+  background-color: #8dfd89;
+}
+
+.btn-create-deck {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border: 2px solid #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 16px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-create-deck:hover {
+  background-color: #0d3a6b; /* Azul mais Escuro */
+  border-color: #0d3a6b;
+}
+
+.btn-back {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border: 2px solid #ffffff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-back:hover {
+  background-color: #0d3a6b;
+  border-color: #0d3a6b;
+}
+
+.btn-delete-deck {
+  background-color: var(--color-error);
+  color: #ffffff;
+}
+
+.btn-delete-deck:hover {
+  background-color: #e60000;
+}
+
+.btn-edit-cards {
+  background-color: var(--color-success);
+  color: #ffffff;
+}
+
+.btn-edit-cards:hover {
+  background-color: #28a832;
+}
+
+.btn-toggle-theme {
+  background-color: var(--color-neutral);
+  color: var(--color-text);
+  border: 1px solid var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: var(--font-family);
+}
+
+.btn-toggle-theme:hover {
+  background-color: var(--color-neutral-light);
+}
+
+/* Perguntas.jsx Styles */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 500px;
+  background-color: var(--color-neutral);
+  color: var(--color-text);
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-align: center;
+  transition: transform 0.2s, background-color 0.3s;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  /* Limitar a altura e adicionar rolagem */
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-resposta {
+  background-color: var(--color-secondary);
+  cursor: default;
+}
+
+.card-pergunta {
+  background-color: var(--color-neutral);
+}
+
+/* Estilos para o Texto dentro do Cartão */
+.card p {
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* Estilos para a Mensagem quando não há Cartões */
+.no-cards-message {
+  margin-top: 50px;
+  font-size: 1.5rem;
+  color: var(--color-text);
+  text-align: center;
+}
+
+/* Botoes.jsx Styles */
+.container-botoes {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+.container-botoes .btn {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.btn-erro {
+  background-color: var(--color-error);
+}
+
+.btn-meio {
+  background-color: var(--color-warning);
+}
+
+.btn-acerto {
+  background-color: var(--color-success);
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* MarcaAcertos.jsx Styles */
+.marca-acerto {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* BarraInferior.jsx Styles */
+.footer {
+  width: 100%;
+  min-height: 150px;
+  background-color: var(--color-primary);
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--color-text);
+  padding: 10px;
+}
+
+.contador {
+  margin-bottom: 10px;
+}
+
+.acertos {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.feedback {
+  margin: 10px 0;
+}
+
+.footer button {
+  /* Herda estilos base de botões */
+  width: 246px;
+  height: 54px;
+  margin: 10px;
+  font-family: var(--font-family);
+  font-size: 18px;
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.footer .btn-fail {
+  background-color: #f06b6b;
+  border-color: #d70900;
+}
+
+.footer .btn-fail:hover {
+  background-color: #df8686;
+}
+
+.footer .btn-success {
+  background-color: #6ff06b;
+  border-color: #5cd43d;
+}
+
+.footer .btn-success:hover {
+  background-color: #8dfd89;
+}
+
+/* Decks.jsx Styles */
+.deck-container {
+  padding: 20px;
+  background-color: var(--color-primary);
+  min-height: 100vh;
+  color: var(--color-text);
+}
+
+.deck-list {
+  list-style: none;
+  padding: 0;
+}
+
+.deck-item {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deck-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.deck-actions button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.deck-actions .btn-edit-cards {
+  background-color: var(--color-success);
+  color: var(--color-text);
+}
+
+.deck-actions .btn-edit-cards:hover {
+  background-color: #28a832;
+}
+
+.deck-actions .btn-delete-deck {
+  background-color: var(--color-error);
+  color: var(--color-text);
+}
+
+.deck-actions .btn-delete-deck:hover {
+  background-color: #e60000;
+}
+
+/* EditDeck.jsx Styles */
+.edit-deck-container {
+  padding: 20px;
+  background-color: var(--color-primary);
+  min-height: 100vh;
+  color: var(--color-text);
+}
+
+.cards-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-item {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-fields {
+  margin-bottom: 10px;
+}
+
+.card-fields label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.card-fields input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  background-color: #ffffff; /* Fundo branco para inputs */
+  color: var(--color-primary);
+}
+
+.card-fields input::placeholder {
+  color: #888888;
+}
+
+.btn-delete-card {
+  background-color: var(--color-error);
+  color: var(--color-text);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-delete-card:hover {
+  background-color: #e60000;
+}
+
+.btn-save {
+  background-color: var(--color-success);
+  color: var(--color-text);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.btn-save:hover {
+  background-color: #28a832;
+}
+
+/* Perguntas.jsx Styles */
+.perguntas-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-cards-message {
+  color: var(--color-text);
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* ReviewCardsPage.jsx Styles */
+.review-page {
+  padding: 20px;
+  background-color: var(--color-primary);
+  min-height: 100vh;
+  color: var(--color-text);
+}
+
+.deck-selection {
+  margin-bottom: 20px;
+}
+
+.deck-selection label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.deck-selection select {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  font-size: 16px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.deck-selection select:hover {
+  background-color: #0d3a6b; /* Azul mais Escuro */
+}
+
+.deck-selection option {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+}
+
+/* MarcaAcertos.jsx Styles */
+.marca-acerto {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* Feedback Mensagens */
+.error-message {
+  color: var(--color-error);
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.success-message {
+  color: var(--color-success);
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.loading {
+  color: var(--color-neutral-light);
+  font-size: 16px;
+}
+
+/* Estilos para o Relatório */
+.report {
+  background-color: var(--color-secondary);
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  color: var(--color-text);
+  max-width: 800px; /* Limitar a largura para melhor visualização no PDF */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.report h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.report p {
+  margin-bottom: 5px;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.export-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.export-buttons .button {
+  flex: 1;
+}
+
+/* Estilos para o Gráfico */
+.chart-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* Ajustar para responsividade */
+@media (max-width: 768px) {
+  .report {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .report h2 {
+    font-size: 20px;
+  }
+
+  .report p {
+    font-size: 14px;
+  }
+
+  .chart-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    font-size: 1rem;
+    padding: 20px 15px;
+  }
+
+  .container-botoes .btn {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
+
+/*css para CreateCard.jsx
+
+
+/* Container principal */
+.create-card-container {
+  max-width: 600px;
+  margin: 2rem auto; /* Espaço superior e centralizado */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.create-card-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Mensagem de erro */
+.create-card-container p {
+  color: red;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Estilo para os grupos de campos (label + input/textarea) */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Estilo para os labels */
+.form-group label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+/* Estilo para o select e input */
+.input, .textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.3rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Garante que o padding seja incluído no tamanho do elemento */
+}
+
+/* Estilo para o botão de envio */
+button[type="submit"] {
+  background-color: #007BFF;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:disabled {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
+
+button[type="submit"]:not(:disabled):hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para o botão de voltar */
+button[style] {
+  margin-top: 1.5rem;
+  color: #007BFF;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+button[style]:hover {
+  color: #0056b3;
+}
